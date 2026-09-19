@@ -16,7 +16,7 @@ Pick the path that matches how you use Claude.
 Gets both skills at once and lets you pull updates later.
 
 ```bash
-/plugin marketplace add <your-github-user>/executive-presence-framework
+/plugin marketplace add yshameer/executive-presence-framework
 ```
 
 ```bash
@@ -34,8 +34,6 @@ To update later:
 ```bash
 /plugin marketplace update executive-presence-framework
 ```
-
-> **Before you publish:** replace `<your-github-user>` above with your actual GitHub handle. The author fields in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` are already filled in.
 
 ---
 

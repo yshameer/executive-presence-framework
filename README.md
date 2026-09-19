@@ -20,7 +20,7 @@ Three ways, depending on how you use Claude. Full detail in [docs/INSTALL.md](do
 **As a Claude Code plugin** (recommended — gets both skills and keeps them updatable):
 
 ```bash
-/plugin marketplace add <your-github-user>/executive-presence-framework
+/plugin marketplace add yshameer/executive-presence-framework
 ```
 
 Then `/plugin install executive-presence@executive-presence-framework`.
