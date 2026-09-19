@@ -2,7 +2,7 @@
 
 **[yshameer.github.io/executive-presence-framework](https://yshameer.github.io/executive-presence-framework/)**
 
-Two [Claude Skills](https://docs.claude.com/en/docs/claude-code/skills) for high-stakes workplace communication, built on 12 frameworks.
+Two agent skills for high-stakes workplace communication, built on 12 frameworks. **Works with [Claude Code](https://docs.claude.com/en/docs/claude-code/skills) and [Codex](https://developers.openai.com/codex/skills)** — both read the same `SKILL.md` format, so one set of files serves both.
 
 | Skill | What it does | Use when |
 |---|---|---|
@@ -15,27 +15,33 @@ Both skills share the same [12-framework reference](skills/executive-presence/re
 
 ## Install
 
-Three ways, depending on how you use Claude. Full detail in [docs/INSTALL.md](docs/INSTALL.md).
+The script installs for whichever agents you have, and takes `--claude`, `--codex`, `--project` or `--dry-run`:
 
-**As a Claude Code plugin** (recommended — gets both skills and keeps them updatable):
+```bash
+git clone https://github.com/yshameer/executive-presence-framework.git
+cd executive-presence-framework && ./install.sh
+```
+
+Or copy the folders yourself — a skill is just a directory:
+
+| Agent | Personal | Project |
+|---|---|---|
+| Claude Code | `~/.claude/skills/` | `<repo>/.claude/skills/` |
+| Codex | `~/.agents/skills/` | `<repo>/.agents/skills/` |
+
+Claude Code can also install this repo as a plugin, which keeps it updatable:
 
 ```bash
 /plugin marketplace add yshameer/executive-presence-framework
 ```
 
-Then `/plugin install executive-presence@executive-presence-framework`.
+**Using neither agent?** Paste a self-contained prompt from [`prompts/`](prompts/) into any chat interface.
 
-**By copying the skill folders** into your personal skills directory:
-
-```bash
-cp -R skills/executive-presence skills/executive-presence-practice ~/.claude/skills/
-```
-
-**Without Claude Code at all** — paste a self-contained prompt from [`prompts/`](prompts/) into any chat interface. See [prompts/README.md](prompts/README.md).
+Full detail for every path in [docs/INSTALL.md](docs/INSTALL.md).
 
 ## Use
 
-You don't invoke these by name. Describe your situation and the right skill triggers itself:
+Describe your situation and the right skill triggers itself — on both agents:
 
 > "I have to tell leadership on Thursday that the migration is slipping by a month."
 
@@ -45,12 +51,15 @@ You don't invoke these by name. Describe your situation and the right skill trig
 
 → **practice**: a scenario with hard numbers, then silence until you answer.
 
-The dividing line is whether you want to *attempt* something or *receive* something. More in [docs/USAGE.md](docs/USAGE.md), with worked transcripts in [`examples/`](examples/).
+The dividing line is whether you want to *attempt* something or *receive* something.
+
+Codex also lets you invoke one explicitly with `$executive-presence` or `$executive-presence-practice` when it doesn't pick up on its own; Claude Code triggers on the description alone. More in [docs/USAGE.md](docs/USAGE.md), with worked transcripts in [`examples/`](examples/).
 
 ## What's in here
 
 ```
-skills/            The two skills, verbatim — this is the installable artifact
+install.sh         Installs for Claude Code, Codex, or both
+skills/            The two skills — the installable artifact, read by both agents
   executive-presence/
     SKILL.md
     references/frameworks.md     the 12 frameworks
@@ -58,6 +67,7 @@ skills/            The two skills, verbatim — this is the installable artifact
   executive-presence-practice/
     SKILL.md
     references/frameworks.md     identical copy — skills must be self-contained
+.claude-plugin/    Claude Code plugin packaging (Codex ignores this)
 prompts/           Portable versions for chat interfaces with no skill support
 examples/          Worked transcripts showing what good output looks like
 benchmarks/        Measured with-skill vs without-skill results

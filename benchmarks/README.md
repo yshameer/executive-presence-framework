@@ -32,6 +32,7 @@ Read these before quoting the numbers anywhere.
 - **The evals were written alongside the skill**, so they test what it was built to do. They don't test scenarios nobody anticipated.
 - **Pass/fail is graded against written expectations** (e.g. *"includes a delivery/pause instruction"*, *"uses bracketed placeholders instead of inventing facts"*), not against human preference. A response can satisfy every expectation and still be one a person wouldn't want to send.
 - **Model names and paths are redacted** in the committed files (`<model-name>`, `<path/to/skill>`), so these aren't reproducible as-is against a specific model version.
+- **These runs were on Claude, not Codex.** The skills are format-compatible with both agents, but the numbers here say nothing about how they perform under Codex — different model, different harness. Treat the Codex behaviour as untested rather than equivalent.
 - **Only `executive-presence` retained its eval definitions** — see [`skills/executive-presence/evals/evals.json`](../skills/executive-presence/evals/evals.json). The practice skill's eval file wasn't kept from the original run; its benchmark records that evals 0–2 ran, but the case definitions are gone.
 
 ## Re-running these

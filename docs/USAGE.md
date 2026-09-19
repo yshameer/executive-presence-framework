@@ -2,7 +2,7 @@
 
 ## Which skill fires
 
-You never name the skill. Both trigger from how you describe the situation, and the dividing line is a single question: **do you want to receive something, or attempt something?**
+Usually you never name the skill. Both trigger from how you describe the situation, and the dividing line is a single question: **do you want to receive something, or attempt something?**
 
 | You say | Fires | Because |
 |---|---|---|
@@ -14,6 +14,20 @@ You never name the skill. Both trigger from how you describe the situation, and 
 | "Give me a scenario, 5 minutes" | practice | Explicit exercise |
 
 The coach also fires on scenarios you didn't frame as communication problems. Describe a tense situation with a stakeholder and it will engage, because "how do I handle this?" is usually the real question underneath.
+
+### Claude Code vs Codex
+
+The skills behave identically; only invocation differs.
+
+| | Claude Code | Codex |
+|---|---|---|
+| Automatic | Yes, from the description | Yes, from the description |
+| Explicit | — | `$executive-presence`, `$executive-presence-practice`, or `/skills` |
+| Confirm it loaded | `/plugins` | `/skills` |
+
+Codex's explicit `$skill-name` is the useful escape hatch: if it doesn't engage on its own — most likely on a terse message that doesn't read as a communication problem — name the skill and it will. On Claude Code the equivalent move is to say more about the situation.
+
+Everything below applies to both.
 
 ## What the coach gives you
 

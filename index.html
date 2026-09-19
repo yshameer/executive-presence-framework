@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Executive Presence Framework — 12 Frameworks as Claude Skills</title>
-<meta name="description" content="Two open-source Claude Skills for high-stakes workplace communication: one writes the words you need, one drills you until you can. BLUF, Minto, PMI, SCR.">
+<title>Executive Presence Framework — Claude Code &amp; Codex Skills</title>
+<meta name="description" content="Two open-source agent skills for high-stakes workplace communication, for Claude Code and Codex. One writes the words you need, one drills you until you can.">
 <link rel="canonical" href="https://yshameer.github.io/executive-presence-framework/">
 <meta name="author" content="Shameer Yusuff">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Executive Presence Framework">
-<meta property="og:title" content="Executive Presence Framework — 12 Frameworks as Claude Skills">
-<meta property="og:description" content="A coach that writes the words you need, and a drill partner that makes you write them yourself. Built on BLUF, the Minto Pyramid, PMI, SCR, C·D·S and A·D·A.">
+<meta property="og:title" content="Executive Presence Framework — Claude Code &amp; Codex Skills">
+<meta property="og:description" content="Agent skills for Claude Code and Codex: a coach that writes the words you need, and a drill partner that makes you write them yourself. BLUF, Minto, PMI, SCR, A·D·A.">
 <meta property="og:url" content="https://yshameer.github.io/executive-presence-framework/">
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Executive Presence Framework — 12 Frameworks as Claude Skills">
+<meta name="twitter:title" content="Executive Presence Framework — Claude Code &amp; Codex Skills">
 <meta name="twitter:description" content="A coach that writes the words you need, and a drill partner that makes you write them yourself.">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▲</text></svg>">
@@ -30,13 +30,13 @@
       "@type": "SoftwareSourceCode",
       "@id": "https://yshameer.github.io/executive-presence-framework/#software",
       "name": "Executive Presence Framework",
-      "description": "Two Claude Skills for high-stakes workplace communication, built on 12 frameworks: a coaching skill that writes the words you need, and a practice skill that drills you on writing them yourself.",
+      "description": "Two agent skills for high-stakes workplace communication, built on 12 frameworks and compatible with both Claude Code and Codex: a coaching skill that writes the words you need, and a practice skill that drills you on writing them yourself.",
       "codeRepository": "https://github.com/yshameer/executive-presence-framework",
       "programmingLanguage": "Markdown",
-      "runtimePlatform": "Claude Code",
+      "runtimePlatform": ["Claude Code", "Codex"],
       "license": "https://opensource.org/licenses/MIT",
       "author": { "@type": "Person", "name": "Shameer Yusuff" },
-      "keywords": "executive presence, BLUF, Minto Pyramid, PMI, SCR, communication frameworks, Claude Skills, leadership communication"
+      "keywords": "executive presence, BLUF, Minto Pyramid, PMI, SCR, communication frameworks, Claude Skills, Codex skills, agent skills, SKILL.md, leadership communication"
     },
     {
       "@type": "TechArticle",
@@ -68,13 +68,18 @@
         },
         {
           "@type": "Question",
-          "name": "How do I install these Claude Skills?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Either install the repository as a Claude Code plugin with '/plugin marketplace add yshameer/executive-presence-framework', or copy the two skill folders directly into ~/.claude/skills/. Each skill folder is self-contained, so you can install just one. For chat interfaces without skill support, paste the portable prompt versions instead." }
+          "name": "How do I install these skills in Claude Code or Codex?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Clone the repository and run ./install.sh, which installs for whichever agents you have set up. To copy by hand: Claude Code reads ~/.claude/skills/ or a repo's .claude/skills/, and Codex reads ~/.agents/skills/ or a repo's .agents/skills/. Each skill folder is self-contained, so you can install just one. For chat interfaces without skill support, paste the portable prompt versions instead." }
         },
         {
           "@type": "Question",
-          "name": "What is a Claude Skill?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A Claude Skill is a folder containing a SKILL.md file with instructions that Claude loads automatically when your request matches the skill's description. You do not invoke it by name — describing a situation that matches triggers it. Skills can include reference files that Claude reads before responding." }
+          "name": "What is an agent skill?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An agent skill is a folder containing a SKILL.md file whose YAML frontmatter gives a name and a description, followed by instructions the agent follows. The agent loads it automatically when your request matches the description, and the folder can include reference files the agent reads before responding. Claude Code and Codex both read this format." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Claude Code and Codex use the same skill format?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both read a SKILL.md file with name and description frontmatter, and both support an optional references/ subdirectory. The same files work on either agent, so only the install location differs: Claude Code scans ~/.claude/skills/ and .claude/skills/, while Codex scans ~/.agents/skills/, .agents/skills/ and /etc/codex/skills/. Codex additionally allows explicit invocation with a dollar sign followed by the skill name." }
         }
       ]
     }
@@ -252,9 +257,10 @@ footer a:hover { color: var(--accent); }
 <div class="wrap">
 
 <header class="hero">
-  <p class="eyebrow">Open-source Claude Skills</p>
+  <p class="eyebrow">Open-source skills for Claude Code &amp; Codex</p>
   <h1>Executive Presence Framework</h1>
-  <p class="lede">Two Claude Skills for high-stakes workplace communication. One <strong>writes the words you need</strong>. The other <strong>refuses to</strong>, and makes you write them instead.</p>
+  <p class="lede">Two agent skills for high-stakes workplace communication. One <strong>writes the words you need</strong>. The other <strong>refuses to</strong>, and makes you write them instead.</p>
+  <p class="lede" style="font-size:1rem">Same files run on <strong>Claude Code</strong> and <strong>Codex</strong> — both read the <code>SKILL.md</code> format.</p>
   <div class="btns">
     <a class="btn primary" href="https://github.com/yshameer/executive-presence-framework">View on GitHub</a>
     <a class="btn" href="#install">Install</a>
@@ -281,7 +287,9 @@ footer a:hover { color: var(--accent); }
   </article>
 </div>
 
-<p>You never invoke either by name. Describe a situation — <em>"I have to tell leadership on Thursday that the migration is slipping by a month"</em> — and the coach engages. Say <em>"drill me on BLUF"</em> and the practice skill does. The dividing line is whether you want to <strong>receive</strong> something or <strong>attempt</strong> something.</p>
+<p>You don't usually invoke either by name. Describe a situation — <em>"I have to tell leadership on Thursday that the migration is slipping by a month"</em> — and the coach engages. Say <em>"drill me on BLUF"</em> and the practice skill does. The dividing line is whether you want to <strong>receive</strong> something or <strong>attempt</strong> something.</p>
+
+<p>On Codex you can also name one explicitly with <code>$executive-presence</code> when it doesn't pick up on its own. Claude Code triggers on the description alone.</p>
 
 <h2 id="frameworks">The 12 frameworks</h2>
 
@@ -387,13 +395,21 @@ footer a:hover { color: var(--accent); }
 
 <h2 id="install">Install</h2>
 
-<p>As a Claude Code plugin — gets both skills and keeps them updatable:</p>
-<pre><code>/plugin marketplace add yshameer/executive-presence-framework
-/plugin install executive-presence@executive-presence-framework</code></pre>
-
-<p>Or copy the folders directly. Each skill is self-contained, so you can take just one:</p>
+<p>The install script sets up whichever agents you already have. It takes <code>--claude</code>, <code>--codex</code>, <code>--project</code> and <code>--dry-run</code>:</p>
 <pre><code>git clone https://github.com/yshameer/executive-presence-framework.git
-cp -R executive-presence-framework/skills/* ~/.claude/skills/</code></pre>
+cd executive-presence-framework &amp;&amp; ./install.sh</code></pre>
+
+<p>Or copy the folders yourself — a skill is just a directory, and each one is self-contained, so you can take only the coach if you want:</p>
+
+<table>
+  <thead><tr><th>Agent</th><th>Personal</th><th>Project</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Code</td><td><code>~/.claude/skills/</code></td><td><code>&lt;repo&gt;/.claude/skills/</code></td></tr>
+    <tr><td>Codex</td><td><code>~/.agents/skills/</code></td><td><code>&lt;repo&gt;/.agents/skills/</code></td></tr>
+  </tbody>
+</table>
+
+<p>Claude Code can also install the repo as a plugin, which keeps it updatable — <code>/plugin marketplace add yshameer/executive-presence-framework</code>. On Codex, run <code>/skills</code> afterwards to confirm they loaded.</p>
 
 <p>Using Claude.ai, ChatGPT, or another chat interface with no skill support? Paste one of the <a href="https://github.com/yshameer/executive-presence-framework/tree/main/prompts">portable prompts</a> — each inlines all 12 frameworks, so it works as a single paste with no file loading.</p>
 
@@ -439,8 +455,14 @@ cp -R executive-presence-framework/skills/* ~/.claude/skills/</code></pre>
 <h2 id="faq">Questions</h2>
 
 <details>
-  <summary>What is a Claude Skill?</summary>
-  <p>A folder containing a <code>SKILL.md</code> file of instructions that Claude loads automatically when your request matches the skill's description. You don't invoke it by name — describing a matching situation triggers it. Skills can include reference files that Claude reads before responding, which is how the 12 frameworks get loaded here.</p>
+  <summary>What is an agent skill?</summary>
+  <p>A folder containing a <code>SKILL.md</code> file whose YAML frontmatter gives a <code>name</code> and a <code>description</code>, followed by the instructions the agent follows. The agent loads it automatically when your request matches the description, so you don't invoke it by name. A skill folder can also hold reference files the agent reads before responding — which is how the 12 frameworks get loaded here.</p>
+</details>
+
+<details>
+  <summary>Do Claude Code and Codex really use the same files?</summary>
+  <p>Yes. Both read <code>SKILL.md</code> with <code>name</code> and <code>description</code> frontmatter, and both support an optional <code>references/</code> subdirectory. Nothing in these skills is agent-specific, so the same directory works on either. Only two things differ: where the files are installed, and that Codex adds explicit <code>$skill-name</code> invocation on top of automatic triggering.</p>
+  <p>The one Claude-only piece is <code>.claude-plugin/</code>, which is Claude Code's packaging format for installing the repo as an updatable plugin. Codex ignores it.</p>
 </details>
 
 <details>

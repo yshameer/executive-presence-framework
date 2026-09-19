@@ -1,6 +1,8 @@
 # Portable prompts
 
-Plain-text versions of both skills, for tools that don't support Claude Skills — Claude.ai Projects, ChatGPT, Custom GPTs, Gemini, or any chat box.
+Plain-text versions of both skills, for tools that don't support agent skills — Claude.ai Projects, ChatGPT, Custom GPTs, Gemini, or any chat box.
+
+**If you're using Claude Code or Codex, install the skills instead** — see [docs/INSTALL.md](../docs/INSTALL.md). Both agents read the `SKILL.md` format directly, and the real skills load the full framework reference rather than the condensed version here. Codex's own `~/.codex/prompts/` mechanism is deprecated in favour of skills, so there's no reason to use these there either.
 
 | File | Equivalent to |
 |---|---|
