@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "skill_name": "executive-presence-practice",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-08-02T17:42:37Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 42.9,
+        "tokens": 29644,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Withholds the model answer before the user attempts",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Presents a concrete scenario with usable numbers/data",
+          "passed": true,
+          "evidence": "6 quantitative tokens found: ['4', 'Aug 14', 'Sept 4', 'Aug 8', '$45K', 'Aug 14']"
+        },
+        {
+          "text": "States the required format and length of the user's answer",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Calibrated to 5 minutes (under 350 words)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Ends by inviting the user's attempt",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 51.1,
+        "tokens": 28497,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Withholds the model answer before the user attempts",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Scenario is genuinely hard (senior counterpart / prior rejection / hostility)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Sets up live in-character pushback, not one-shot written",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Gets to the scenario quickly rather than lecturing (under 450 words)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Flags that some objections may contain genuinely new information",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 56.1,
+        "tokens": 29422,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Quotes the user's own words when critiquing",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Names the specific hedges rather than generic advice",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Identifies the missing arithmetic (8 vs 15 minutes)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Provides a model answer AFTER the attempt, marked as one possible version",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Ends with a carry-forward takeaway and offers a next step",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 32.5,
+        "tokens": 27033,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Withholds the model answer before the user attempts",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Presents a concrete scenario with usable numbers/data",
+          "passed": true,
+          "evidence": "8 quantitative tokens found: ['1', '30', '2', '90', '3', '2', '1', '2']"
+        },
+        {
+          "text": "States the required format and length of the user's answer",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Calibrated to 5 minutes (under 350 words)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Ends by inviting the user's attempt",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 72.9,
+        "tokens": 20522,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Withholds the model answer before the user attempts",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Scenario is genuinely hard (senior counterpart / prior rejection / hostility)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Sets up live in-character pushback, not one-shot written",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Gets to the scenario quickly rather than lecturing (under 450 words)",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Flags that some objections may contain genuinely new information",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 52.5,
+        "tokens": 19670,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Quotes the user's own words when critiquing",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Names the specific hedges rather than generic advice",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Identifies the missing arithmetic (8 vs 15 minutes)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Provides a model answer AFTER the attempt, marked as one possible version",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Ends with a carry-forward takeaway and offers a next step",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 50.0333,
+        "stddev": 6.6643,
+        "min": 42.9,
+        "max": 56.1
+      },
+      "tokens": {
+        "mean": 29187.6667,
+        "stddev": 608.3472,
+        "min": 28497,
+        "max": 29644
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8667,
+        "stddev": 0.2309,
+        "min": 0.6,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 52.6333,
+        "stddev": 20.2003,
+        "min": 32.5,
+        "max": 72.9
+      },
+      "tokens": {
+        "mean": 22408.3333,
+        "stddev": 4027.6708,
+        "min": 19670,
+        "max": 27033
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.13",
+      "time_seconds": "-2.6",
+      "tokens": "+6779"
+    }
+  },
+  "notes": []
+}

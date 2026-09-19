@@ -1,0 +1,16 @@
+{
+  "name": "executive-presence",
+  "version": "1.0.0",
+  "description": "Two skills for high-stakes workplace communication: a coach that writes the words you need, and a drill partner that makes you write them yourself. Built on 12 frameworks (BLUF, Minto, PMI, SCR, C·D·S, A·D·A and others).",
+  "keywords": [
+    "communication",
+    "executive-presence",
+    "leadership",
+    "coaching",
+    "bluf",
+    "minto"
+  ],
+  "author": {
+    "name": "Shameer Yusuff"
+  }
+}

@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Python (handout builder)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Editors
+.idea/
+*.swp
+
+# Skill eval / benchmark scratch output
+*-workspace/

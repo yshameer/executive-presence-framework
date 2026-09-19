@@ -1,0 +1,26 @@
+{
+  "skill_name": "executive-presence",
+  "evals": [
+    {
+      "id": 0,
+      "name": "spoken-bad-news-to-leadership",
+      "prompt": "I have to tell our leadership team on Thursday that the platform migration is slipping by about a month. We said end of Q3, it's going to be end of October. The main reason is we found way more undocumented dependencies in the legacy billing service than anyone expected - about 40 vs the 12 we scoped for. Two of them touch payment processing so we can't rush them. How do I handle this meeting?",
+      "expected_output": "Diagnosis naming that the real challenge is owning the miss without over-explaining. SCR + BLUF + C·D·S recommended. Worked example with the date stated early and a recovery plan. A delivery note (this is spoken) with a specific pause instruction. Placeholders where data is missing.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "short-written-slack-reply",
+      "prompt": "my director just slacked me: 'quick one - can we pull the analytics dashboard work into this sprint?' we're already at capacity, the team is doing the SOC2 remediation which has a hard audit date in 5 weeks. what do i say",
+      "expected_output": "Should recognise this is a low-ceremony written message needing a short decisive answer, NOT a full framework treatment. Decisive Answering + C·D·S. Response should be brief - a few sentences. Should NOT include a delivery note since this is written.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "peer-conflict-listen-first",
+      "prompt": "There's a new director on the data platform team who keeps rejecting our schema change requests. Third one this quarter. My team is frustrated and wants me to escalate to my VP. I'm meeting her one on one next week. I want to make the case that their review process is blocking us.",
+      "expected_output": "Should push back on the user's framing - they've never heard her side. Framework 10 (Read Before You Respond) should be primary. Should give the question to ask rather than only the case to make. Should still equip them with a case if listening doesn't resolve it. Delivery note appropriate (spoken 1:1).",
+      "files": []
+    }
+  ]
+}

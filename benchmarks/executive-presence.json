@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "skill_name": "executive-presence",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-08-02T17:37:08Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 83.7,
+        "tokens": 30722,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Includes a delivery/pause instruction (spoken scenario)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Worked example states the new date within its opening lines (BLUF)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Uses bracketed placeholders instead of inventing specific facts",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Labels which framework each part of the worked example is doing",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Prepares for likely pushback, not just the opening statement",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 72.6,
+        "tokens": 30106,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Does NOT include a delivery/pause note (written scenario)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Calibrated short for a Slack reply (under 700 words)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Gives a decisive stance rather than hedging",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Provides ready-to-send message text",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Uses placeholders for facts not supplied by the user",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 92.0,
+        "tokens": 31356,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Pushes back on the user's framing rather than building the case uncritically",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Recommends listening / asking before advocating",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Provides an actual question to ask the counterpart",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Still equips the user with a case for the VP",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Includes a delivery/pause instruction (spoken 1:1)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.2,
+        "passed": 1,
+        "failed": 4,
+        "total": 5,
+        "time_seconds": 54.2,
+        "tokens": 18659,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Includes a delivery/pause instruction (spoken scenario)",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Worked example states the new date within its opening lines (BLUF)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Uses bracketed placeholders instead of inventing specific facts",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Labels which framework each part of the worked example is doing",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Prepares for likely pushback, not just the opening statement",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 41.8,
+        "tokens": 18471,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Does NOT include a delivery/pause note (written scenario)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Calibrated short for a Slack reply (under 700 words)",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Gives a decisive stance rather than hedging",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Provides ready-to-send message text",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Uses placeholders for facts not supplied by the user",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.2,
+        "passed": 1,
+        "failed": 4,
+        "total": 5,
+        "time_seconds": 64.6,
+        "tokens": 19914,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Pushes back on the user's framing rather than building the case uncritically",
+          "passed": true,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Recommends listening / asking before advocating",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Provides an actual question to ask the counterpart",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Still equips the user with a case for the VP",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        },
+        {
+          "text": "Includes a delivery/pause instruction (spoken 1:1)",
+          "passed": false,
+          "evidence": "automated check on response.md"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 82.7667,
+        "stddev": 9.7336,
+        "min": 72.6,
+        "max": 92.0
+      },
+      "tokens": {
+        "mean": 30728.0,
+        "stddev": 625.0216,
+        "min": 30106,
+        "max": 31356
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.4667,
+        "stddev": 0.4619,
+        "min": 0.2,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 53.5333,
+        "stddev": 11.4146,
+        "min": 41.8,
+        "max": 64.6
+      },
+      "tokens": {
+        "mean": 19014.6667,
+        "stddev": 784.4975,
+        "min": 18471,
+        "max": 19914
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.53",
+      "time_seconds": "+29.2",
+      "tokens": "+11713"
+    }
+  },
+  "notes": []
+}

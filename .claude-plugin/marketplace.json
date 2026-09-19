@@ -1,0 +1,13 @@
+{
+  "name": "executive-presence-framework",
+  "owner": {
+    "name": "Shameer Yusuff"
+  },
+  "plugins": [
+    {
+      "name": "executive-presence",
+      "source": "./",
+      "description": "Executive presence coaching and practice drills, built on 12 communication frameworks."
+    }
+  ]
+}
