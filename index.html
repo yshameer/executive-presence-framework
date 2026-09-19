@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive Presence Framework — 12 Frameworks as Claude Skills</title>
+<meta name="description" content="Two open-source Claude Skills for high-stakes workplace communication: one writes the words you need, one drills you until you can. BLUF, Minto, PMI, SCR.">
+<link rel="canonical" href="https://yshameer.github.io/executive-presence-framework/">
+<meta name="author" content="Shameer Yusuff">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Executive Presence Framework">
+<meta property="og:title" content="Executive Presence Framework — 12 Frameworks as Claude Skills">
+<meta property="og:description" content="A coach that writes the words you need, and a drill partner that makes you write them yourself. Built on BLUF, the Minto Pyramid, PMI, SCR, C·D·S and A·D·A.">
+<meta property="og:url" content="https://yshameer.github.io/executive-presence-framework/">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Executive Presence Framework — 12 Frameworks as Claude Skills">
+<meta name="twitter:description" content="A coach that writes the words you need, and a drill partner that makes you write them yourself.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▲</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://yshameer.github.io/executive-presence-framework/#software",
+      "name": "Executive Presence Framework",
+      "description": "Two Claude Skills for high-stakes workplace communication, built on 12 frameworks: a coaching skill that writes the words you need, and a practice skill that drills you on writing them yourself.",
+      "codeRepository": "https://github.com/yshameer/executive-presence-framework",
+      "programmingLanguage": "Markdown",
+      "runtimePlatform": "Claude Code",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@type": "Person", "name": "Shameer Yusuff" },
+      "keywords": "executive presence, BLUF, Minto Pyramid, PMI, SCR, communication frameworks, Claude Skills, leadership communication"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://yshameer.github.io/executive-presence-framework/#article",
+      "headline": "The 12 Executive Communication Frameworks",
+      "description": "BLUF, Minto Pyramid, C·D·S, PMI, SCR, Story Structure, Decisive Answering, Meeting Lead, A·D·A, Read Before You Respond, the Pause Principle and the Consistency Compound — with the test each one has to pass.",
+      "author": { "@type": "Person", "name": "Shameer Yusuff" },
+      "license": "https://opensource.org/licenses/MIT",
+      "isPartOf": { "@id": "https://yshameer.github.io/executive-presence-framework/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yshameer.github.io/executive-presence-framework/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is BLUF?",
+          "acceptedAnswer": { "@type": "Answer", "text": "BLUF stands for Bottom Line Up Front: state your answer or recommendation first, and the reasoning second. The test is whether someone who stopped reading after your first sentence would still know what you want. Instead of 'We looked at the data, ran the analysis, and after everything we think maybe we should go with Option B', write 'We should go with Option B. It cuts cost by 20% with acceptable risk. Here's why.'" }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Minto Pyramid Principle?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Minto Pyramid structures an argument as a governing thought, supported by roughly three key arguments, each supported by data. It has two rules: vertical logic, where each level answers 'Why?' from the level above, and horizontal MECE, where arguments at the same level are mutually exclusive and collectively exhaustive. Think bottom-up if you need to work it out; always present top-down." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between caving and updating when handling pushback?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Caving is changing your position because someone pushed harder or outranks you, and it destroys credibility. Updating is changing because they introduced genuinely new data or a valid argument, and it builds credibility. Under pressure the two feel identical from the inside, so the discipline is knowing which one you are doing." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install these Claude Skills?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Either install the repository as a Claude Code plugin with '/plugin marketplace add yshameer/executive-presence-framework', or copy the two skill folders directly into ~/.claude/skills/. Each skill folder is self-contained, so you can install just one. For chat interfaces without skill support, paste the portable prompt versions instead." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Claude Skill?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Claude Skill is a folder containing a SKILL.md file with instructions that Claude loads automatically when your request matches the skill's description. You do not invoke it by name — describing a situation that matches triggers it. Skills can include reference files that Claude reads before responding." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --surface-2: #f4f2ee;
+  --text: #1c1b19;
+  --text-dim: #5d5a54;
+  --border: #e3dfd8;
+  --accent: #0f6f68;
+  --accent-dim: #0b514c;
+  --code-bg: #f4f2ee;
+  --shadow: 0 1px 2px rgba(28,27,25,.05), 0 6px 20px -12px rgba(28,27,25,.18);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17181a;
+    --surface: #1f2124;
+    --surface-2: #26282c;
+    --text: #eceae6;
+    --text-dim: #a2a09b;
+    --border: #32353a;
+    --accent: #5fd4c4;
+    --accent-dim: #8fe4d8;
+    --code-bg: #26282c;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17181a;
+  --surface: #1f2124;
+  --surface-2: #26282c;
+  --text: #eceae6;
+  --text-dim: #a2a09b;
+  --border: #32353a;
+  --accent: #5fd4c4;
+  --accent-dim: #8fe4d8;
+  --code-bg: #26282c;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px -12px rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.65 ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  overflow-x: hidden;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+h1, h2, h3, .ui {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.12; letter-spacing: -.022em; margin: 0 0 .5rem; }
+h2 { font-size: clamp(1.35rem, 3.6vw, 1.7rem); line-height: 1.2; letter-spacing: -.016em; margin: 3.5rem 0 1rem; }
+h3 { font-size: 1.06rem; letter-spacing: -.008em; margin: 2rem 0 .4rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-dim); }
+code, pre, kbd {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .87em;
+}
+code { background: var(--code-bg); padding: .12em .38em; border-radius: 4px; }
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .85rem 1rem;
+  overflow-x: auto;
+  margin: 0 0 1rem;
+}
+pre code { background: none; padding: 0; }
+
+header.hero { padding: clamp(3rem, 9vw, 5.5rem) 0 1rem; }
+.eyebrow {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .73rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 1rem;
+}
+.lede { font-size: clamp(1.08rem, 2.6vw, 1.22rem); color: var(--text-dim); margin-bottom: 1.6rem; }
+.lede strong { color: var(--text); font-weight: 600; }
+
+.btns { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.6rem 0 0; }
+.btn {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .9rem; font-weight: 550;
+  padding: .55rem 1.05rem; border-radius: 7px;
+  text-decoration: none; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text);
+  transition: border-color .15s, transform .15s;
+}
+.btn:hover { border-color: var(--accent); color: var(--text); transform: translateY(-1px); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .btn.primary, :root:not([data-theme="light"]) .btn.primary { color: #10201f; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .btn.primary { color: #fff; } }
+.btn.primary:hover { opacity: .9; color: inherit; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+.card h3 { margin-top: 0; }
+.card .meta {
+  font-family: ui-monospace, monospace; font-size: .78rem;
+  color: var(--accent); display: block; margin-bottom: .35rem;
+}
+.card p:last-child { margin-bottom: 0; }
+
+.grid { display: grid; gap: 1rem; }
+@media (min-width: 620px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+
+.fw { border-top: 1px solid var(--border); padding-top: 1.35rem; margin-top: 1.35rem; }
+.fw:first-of-type { border-top: 0; margin-top: .5rem; padding-top: 0; }
+.fw h3 { margin-top: 0; display: flex; gap: .55rem; align-items: baseline; flex-wrap: wrap; }
+.num {
+  font-family: ui-monospace, monospace; font-size: .8rem;
+  color: var(--accent); font-weight: 400;
+}
+.test {
+  font-size: .95rem; color: var(--text-dim);
+  border-left: 2px solid var(--border); padding-left: .85rem; margin: .6rem 0 0;
+}
+.ex { font-size: .95rem; margin: .55rem 0 0; }
+.ex .bad { color: var(--text-dim); }
+.ex .good { color: var(--text); }
+.mark { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: .8rem; }
+
+.group-label {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .72rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--text-dim); margin: 2.4rem 0 .9rem; padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: .93rem; margin: 0 0 1rem; display: block; overflow-x: auto; }
+@media (min-width: 620px) { table { display: table; } }
+th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-dim); font-weight: 600; }
+
+details { border: 1px solid var(--border); border-radius: 8px; padding: .75rem 1rem; margin-bottom: .6rem; background: var(--surface); }
+summary { cursor: pointer; font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 550; font-size: .97rem; }
+summary::marker { color: var(--accent); }
+details p { margin: .7rem 0 0; font-size: .96rem; }
+details p:last-child { margin-bottom: 0; }
+
+footer {
+  margin-top: 5rem; border-top: 1px solid var(--border);
+  padding: 2rem 0 3rem; font-size: .9rem; color: var(--text-dim);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+footer a { color: var(--text-dim); }
+footer a:hover { color: var(--accent); }
+.skip {
+  position: absolute; left: -9999px;
+  background: var(--accent); color: #fff; padding: .5rem 1rem; border-radius: 0 0 6px 0;
+}
+.skip:focus { left: 0; top: 0; z-index: 10; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Open-source Claude Skills</p>
+  <h1>Executive Presence Framework</h1>
+  <p class="lede">Two Claude Skills for high-stakes workplace communication. One <strong>writes the words you need</strong>. The other <strong>refuses to</strong>, and makes you write them instead.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/yshameer/executive-presence-framework">View on GitHub</a>
+    <a class="btn" href="#install">Install</a>
+    <a class="btn" href="#frameworks">The 12 frameworks</a>
+  </div>
+</header>
+
+<main id="main">
+
+<h2 id="skills">Two skills, one distinction</h2>
+
+<p>The split is the whole design. A drill where the model hands you a model answer up front is just coaching with extra steps — so the practice skill is built around a single rule it isn't allowed to break.</p>
+
+<div class="grid two">
+  <article class="card">
+    <h3><code class="meta">executive-presence</code>The coach</h3>
+    <p>Diagnoses what the moment actually requires, picks the frameworks, and writes the words you'd say or send — with <code>[placeholders]</code> for your numbers.</p>
+    <p class="test">Use when you have a real situation to handle in the next hour.</p>
+  </article>
+  <article class="card">
+    <h3><code class="meta">executive-presence-practice</code>The drill partner</h3>
+    <p>Gives you a scenario with hard numbers, then stops. You write the answer. Then it critiques your exact words against the framework's standard.</p>
+    <p class="test">Use when you want to get better, not get a script.</p>
+  </article>
+</div>
+
+<p>You never invoke either by name. Describe a situation — <em>"I have to tell leadership on Thursday that the migration is slipping by a month"</em> — and the coach engages. Say <em>"drill me on BLUF"</em> and the practice skill does. The dividing line is whether you want to <strong>receive</strong> something or <strong>attempt</strong> something.</p>
+
+<h2 id="frameworks">The 12 frameworks</h2>
+
+<p>Grouped by what they govern. Most scenarios need three or four of these, not all twelve.</p>
+
+<p class="group-label">Structure — how you order what you say</p>
+
+<section class="fw">
+  <h3><span class="num">01</span> BLUF — Bottom Line Up Front</h3>
+  <p>Answer or recommendation first, reasoning second. This is the default for any update, written or spoken.</p>
+  <p class="test"><strong>Test:</strong> If they stopped reading after your first sentence, would they know what you want?</p>
+  <p class="ex"><span class="bad">✗ "There were some challenges with the timeline and after talking to the team we realised there might be a delay…"</span><br>
+  <span class="good">✓ "The launch will slip by 2 weeks. Root cause is 3 unresolved blockers in QA. Here's the recovery plan."</span></p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">02</span> Minto Pyramid</h3>
+  <p>Governing thought → three key arguments → supporting data. <strong>Vertical logic:</strong> each level answers "Why?" from the level above. <strong>Horizontal MECE:</strong> arguments at the same level are mutually exclusive and collectively exhaustive — no overlaps, no gaps.</p>
+  <p class="test">Write bottom-up if you need to think it through. Send top-down always.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">03</span> C·D·S — Claim · Data · So what</h3>
+  <p>The assertion, the specific number that proves it, and the implication it drives. Every adjective is a candidate for replacement with a number.</p>
+  <table>
+    <thead><tr><th>Vague</th><th>Precise</th></tr></thead>
+    <tbody>
+      <tr><td>"A lot of customers complained"</td><td>"38 support tickets in 72 hrs — 3× our weekly average"</td></tr>
+      <tr><td>"The team is pretty stretched"</td><td>"We're at 112% capacity — 3 engineers on 2 projects each"</td></tr>
+      <tr><td>"We're going to be a bit late"</td><td>"v2.0 ships Oct 3 — 21 days past the Sept 12 target"</td></tr>
+    </tbody>
+  </table>
+  <p class="test">No exact number? A range ("between 15–25%") or a reference anchor ("roughly 2× what we saw in Q1") both beat "quite a bit."</p>
+</section>
+
+<p class="group-label">Thinking — how you work out what to say</p>
+
+<section class="fw">
+  <h3><span class="num">04</span> PMI — Plus / Minus / Interesting</h3>
+  <p>De Bono's tool for stress-testing your own position. A <em>thinking</em> tool, not a presenting tool: run it privately, then present the conclusion with BLUF or Minto. <strong>Plus</strong> — genuine upsides, with data. <strong>Minus</strong> — real downsides, with cost or probability. <strong>Interesting</strong> — questions raised, dependencies, second-order effects.</p>
+  <p class="test"><strong>The Interesting column is the differentiator.</strong> It's where the real risks hide, and naming what you don't know yet signals seniority. Never leave it blank.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">05</span> SCR — Situation · Complication · Resolution</h3>
+  <p><strong>Situation:</strong> stable context everyone agrees on. <strong>Complication:</strong> what changed or is at risk. <strong>Resolution:</strong> your recommendation, with urgency behind it.</p>
+  <p class="test"><strong>The Complication is the sentence that matters most</strong> — it has to create genuine tension. "Sales are up" is a situation. "Sales are up but NPS dropped 12 points — we're growing ourselves into a churn problem" is a complication.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">06</span> Story Structure — Hook · Context · Insight · CTA</h3>
+  <p>For all-hands, investor updates, anything that has to be remembered a week later. Four hook types: a surprising stat, a specific moment, a provocative question, or a sharp contrast.</p>
+  <p class="ex"><span class="good">✓ "Eighteen customers are generating more revenue than twelve hundred."</span></p>
+  <p class="test">Never open with "Today I want to talk about…" — it loses the room in three words. And the audience is the hero, not you.</p>
+</section>
+
+<p class="group-label">Interaction — how you handle the room</p>
+
+<section class="fw">
+  <h3><span class="num">07</span> Decisive Answering</h3>
+  <p>There are three valid answers to a direct question: <strong>Yes</strong> (state it, then what happens next), <strong>No</strong> (state it, then the reason and what you'd recommend instead), or <strong>"I'll find out by [specific time]"</strong> — owning the gap, where "soon" and "ASAP" don't count.</p>
+  <p class="test">Avoid "it depends," "that's a good question," "potentially, yes." These read as unpreparedness rather than caution, and they shift the cognitive work back to whoever asked.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">08</span> Meeting Lead — the 3-sentence opening</h3>
+  <p>"We're here to <strong>decide</strong> [specific decision]" — <em>decide</em>, not <em>discuss</em>. Then: "My recommendation is [stance] — [one-line reason with data]." Then: "I want to hear your [concerns on X], and we need to leave with [specific outcome]."</p>
+  <p class="test">In someone else's meeting, still lead with your stance when given the floor. Don't wait for permission to have a position.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">09</span> A·D·A — Acknowledge · Data · Affirm or Adjust</h3>
+  <p>For handling pushback. Acknowledge that you heard it, respond with evidence rather than a louder opinion, then either hold your position with support or update openly.</p>
+  <table>
+    <thead><tr><th>Caving</th><th>Updating</th></tr></thead>
+    <tbody>
+      <tr><td>Changing because someone pushed harder or outranks you</td><td>Changing because they introduced new data or a valid argument</td></tr>
+      <tr><td>Destroys credibility</td><td>Builds credibility</td></tr>
+    </tbody>
+  </table>
+  <p class="test">You have to know which one you're doing. From the inside, under pressure, they feel identical.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">10</span> Read Before You Respond</h3>
+  <p>Executive presence is not only what you say — it's what you understood before you spoke. Ask one question before you advocate: <em>"Before I give you my view, what's driving the concern on your side?"</em> That's reconnaissance, not softness. Then reframe for the audience: a CFO leads with the number and downside protection; a CEO with the strategic bet; engineering with the constraint; sales with customer impact and timing.</p>
+  <p class="test">The most senior person in the room is often the one asking the sharpest question, not giving the longest answer.</p>
+</section>
+
+<p class="group-label">Embodiment — how it lands, and what compounds</p>
+
+<section class="fw">
+  <h3><span class="num">11</span> Pause Principle</h3>
+  <p>Delivery is a claim about how much you trust your own content. A perfectly structured argument delivered fast, with rising intonation and no pauses, still reads as junior. Pause <em>before</em> answering — two seconds of silence signals consideration where "so, um" signals buying time. Pause <em>after</em> your recommendation. Land your sentences. Slow to about 80% pace as stakes rise.</p>
+  <p class="test">Rushing to justify your own recommendation is the most common tell of low confidence.</p>
+</section>
+
+<section class="fw">
+  <h3><span class="num">12</span> Consistency Compound</h3>
+  <p>Frameworks 1–11 optimise for the moment; this one optimises for accumulation, and over time it outweighs the rest. Every "I'll get back to you by Thursday" is a credibility contract — kept, it compounds; broken, it discounts everything you say afterwards. People judge your values by your behaviour when holding them costs you something. And your position has to be the same with your team, your manager, and your peers.</p>
+  <p class="test">Presence collapses fast when people compare notes and find three versions of your view.</p>
+</section>
+
+<h2 id="install">Install</h2>
+
+<p>As a Claude Code plugin — gets both skills and keeps them updatable:</p>
+<pre><code>/plugin marketplace add yshameer/executive-presence-framework
+/plugin install executive-presence@executive-presence-framework</code></pre>
+
+<p>Or copy the folders directly. Each skill is self-contained, so you can take just one:</p>
+<pre><code>git clone https://github.com/yshameer/executive-presence-framework.git
+cp -R executive-presence-framework/skills/* ~/.claude/skills/</code></pre>
+
+<p>Using Claude.ai, ChatGPT, or another chat interface with no skill support? Paste one of the <a href="https://github.com/yshameer/executive-presence-framework/tree/main/prompts">portable prompts</a> — each inlines all 12 frameworks, so it works as a single paste with no file loading.</p>
+
+<p>Full detail, including project-scoped installs for a whole team: <a href="https://github.com/yshameer/executive-presence-framework/blob/main/docs/INSTALL.md">INSTALL.md</a>.</p>
+
+<h2 id="examples">What the output looks like</h2>
+
+<p>Four worked demonstrations, three of them built on the same scenarios used to benchmark the skill:</p>
+
+<div class="card">
+  <h3><a href="https://github.com/yshameer/executive-presence-framework/blob/main/examples/01-bad-news-to-leadership.md">Delivering a slip to leadership</a></h3>
+  <p>The full five-part response on a high-stakes spoken moment: diagnosis, frameworks, the actual words, and a delivery note telling you exactly where to pause.</p>
+</div>
+<div class="card">
+  <h3><a href="https://github.com/yshameer/executive-presence-framework/blob/main/examples/02-slack-reply-at-capacity.md">Saying no to your director on Slack</a></h3>
+  <p>Same skill, ~80 words, no delivery note. Shows the coach sizing its response to the stakes instead of applying a fixed template.</p>
+</div>
+<div class="card">
+  <h3><a href="https://github.com/yshameer/executive-presence-framework/blob/main/examples/03-peer-conflict-listen-first.md">When the skill tells you you're wrong</a></h3>
+  <p>The user asks for help making a case. They're told to ask a question first — and then handed the case anyway, for the branch where listening doesn't resolve it.</p>
+</div>
+<div class="card">
+  <h3><a href="https://github.com/yshameer/executive-presence-framework/blob/main/examples/04-practice-drill.md">A drill, end to end</a></h3>
+  <p>Scenario with five hard numbers → your attempt → a critique quoting your exact words → one possible strong version, last.</p>
+</div>
+
+<h2 id="results">Does it work?</h2>
+
+<p>Measured with each skill loaded against the same model with no skill, on held-out scenarios:</p>
+
+<table>
+  <thead><tr><th>Skill</th><th>With skill</th><th>Without</th><th>Delta</th></tr></thead>
+  <tbody>
+    <tr><td><code>executive-presence</code></td><td>100% ± 0%</td><td>47% ± 46%</td><td><strong>+53pp</strong></td></tr>
+    <tr><td><code>executive-presence-practice</code></td><td>100% ± 0%</td><td>87% ± 23%</td><td><strong>+13pp</strong></td></tr>
+  </tbody>
+</table>
+
+<p>The <strong>±46%</strong> on the coach's baseline is the interesting number. Unaided, the model was inconsistent rather than uniformly bad — sometimes a genuinely useful response, sometimes an essay about communication with no usable words in it. The skill's main effect is removing that variance.</p>
+
+<p>Three evals per skill, three runs each. That's enough to show direction, not enough for a confident effect size — <a href="https://github.com/yshameer/executive-presence-framework/blob/main/benchmarks/README.md">the full caveats are here</a>, and worth reading before quoting the numbers.</p>
+
+<h2 id="faq">Questions</h2>
+
+<details>
+  <summary>What is a Claude Skill?</summary>
+  <p>A folder containing a <code>SKILL.md</code> file of instructions that Claude loads automatically when your request matches the skill's description. You don't invoke it by name — describing a matching situation triggers it. Skills can include reference files that Claude reads before responding, which is how the 12 frameworks get loaded here.</p>
+</details>
+
+<details>
+  <summary>Why are there two skills instead of one?</summary>
+  <p>Because they need opposite behaviour. The coach writes the answer for you; the drill partner has to withhold it. Combined into one skill, the helpful instruction wins — the model shows you a model answer and there's no exercise left. The same reason applies to the portable prompts: use one at a time, in separate chats.</p>
+</details>
+
+<details>
+  <summary>Why is frameworks.md duplicated in both skill folders?</summary>
+  <p>So each folder works alone. A skill has to be self-contained to be copied out on its own, so the two copies are byte-identical by design and verified at commit time. If you edit one, edit both.</p>
+</details>
+
+<details>
+  <summary>Will it invent numbers for me?</summary>
+  <p>No — that's an explicit instruction in the skill. Facts it doesn't have come back as <code>[bracketed placeholders]</code>, because a fabricated figure in an otherwise usable draft is worse than useless: it will get sent.</p>
+</details>
+
+<details>
+  <summary>Where do the frameworks come from?</summary>
+  <p>They're drawn from published work in communication and decision-making — Barbara Minto's Pyramid Principle, Edward de Bono's PMI, BLUF from military briefing practice, SCR from consulting practice. The synthesis, the examples, and the skill instructions are original to this project.</p>
+</details>
+
+</main>
+
+<footer>
+  <p><a href="https://github.com/yshameer/executive-presence-framework">GitHub</a> · <a href="https://github.com/yshameer/executive-presence-framework/blob/main/docs/INSTALL.md">Install</a> · <a href="https://github.com/yshameer/executive-presence-framework/blob/main/docs/USAGE.md">Usage</a> · <a href="https://github.com/yshameer/executive-presence-framework/blob/main/skills/executive-presence/references/frameworks.md">Frameworks</a> · <a href="https://github.com/yshameer/executive-presence-framework/blob/main/benchmarks/README.md">Benchmarks</a></p>
+  <p>MIT licensed. Built by <a href="https://github.com/yshameer">Shameer Yusuff</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>

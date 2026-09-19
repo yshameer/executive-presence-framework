@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yshameer.github.io/executive-presence-framework/sitemap.xml

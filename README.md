@@ -1,5 +1,7 @@
 # Executive Presence Framework
 
+**[yshameer.github.io/executive-presence-framework](https://yshameer.github.io/executive-presence-framework/)**
+
 Two [Claude Skills](https://docs.claude.com/en/docs/claude-code/skills) for high-stakes workplace communication, built on 12 frameworks.
 
 | Skill | What it does | Use when |
@@ -61,7 +63,15 @@ examples/          Worked transcripts showing what good output looks like
 benchmarks/        Measured with-skill vs without-skill results
 handouts/          Printable PDF of the frameworks, plus its build script
 docs/              Install and usage guides
+index.html         The GitHub Pages landing page
+robots.txt         }
+sitemap.xml        } crawler files for the Pages site
+.nojekyll          }
 ```
+
+### On `index.html`
+
+The landing page restates the 12 frameworks in HTML so the content is indexable — search engines don't read `.md` files on github.com as well as they read a served page. Nothing generates it, so **if you change the frameworks, change the page too.** The Markdown in `skills/` stays canonical; it's what the skills actually read.
 
 ### On the duplicated `frameworks.md`
 
